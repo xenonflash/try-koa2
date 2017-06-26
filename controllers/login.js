@@ -2,7 +2,7 @@ var fs = require('fs');
 
 var fn_login = async (ctx, next) => {
   ctx.response.type = 'text/html';
-  var html = fs.readFileSync('./template/index.html');
+  var html = fs.readFileSync('./template/login.html');
   ctx.response.body = html;
 }
 var fn_handleLogin = async (ctx, next) => {
