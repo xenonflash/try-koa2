@@ -12,5 +12,8 @@
     "node"
   ],
   "author": "xenonflash",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "koa-router": "^7.2.1"
+  }
 }
