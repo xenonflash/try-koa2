@@ -7,6 +7,7 @@ var mid_processTime = require('./middleware/logTime');
 var mid_logRequest = require('./middleware/logRequest');
 var mid_controller = require('./controllers');
 var mid_templating = require('./middleware/templating');
+var mid_db = require('./middleware/dbConnect');
 
 // *******************init nunjucks *******************
 
@@ -15,10 +16,12 @@ var mid_templating = require('./middleware/templating');
 
 app.use(mid_logRequest);
 app.use(bodyParser());
+// using mongodb connection, and bind db to ctx
+app.use(mid_db('mytest'));
 // using template engine
 app.use(mid_templating('template', {}));
 // add router middleware:
 app.use(mid_controller());
 app.use(mid_processTime);
-app.listen(3000);
-console.log('server started at 3000...');
+app.listen(9001);
+console.log('server started at 9001...');
